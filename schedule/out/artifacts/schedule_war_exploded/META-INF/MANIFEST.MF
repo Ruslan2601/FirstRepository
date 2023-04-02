@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: Ruslan2601
+Build-Jdk: 18
+Implementation-Title: schedule
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.schedule.rest
+Main-Class: ${start-class}
+

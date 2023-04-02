@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
+
+    <changeSet id="v01-5-0" author="Ruslan">
+        <tagDatabase tag="table_schedule"/>
+    </changeSet>
+
+    <changeSet id="v01-5-1" author="Ruslan">
+        <createTable tableName="schedule">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="train_id" type="int">
+                <constraints foreignKeyName="fk_trains_id" nullable="false"
+                             referencedTableName="trains" referencedColumnNames="train_id"
+                             deleteCascade="true"/>
+            </column>
+            <column name="station_id" type="int">
+                <constraints foreignKeyName="fk_stations_id" nullable="false"
+                             referencedTableName="stations" referencedColumnNames="station_id"
+                             deleteCascade="true"/>
+            </column>
+            <column name="time" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <rollback>
+                <dropTable tableName="schedule"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

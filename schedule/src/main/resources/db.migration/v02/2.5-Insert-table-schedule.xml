@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
+
+    <changeSet id="v02-5-0" author="Ruslan">
+        <tagDatabase tag="insert_table_schedule"/>
+    </changeSet>
+
+    <changeSet id="v02-5-1" author="Ruslan">
+        <insert tableName="schedule">
+            <column name="id" value="1"/>
+            <column name="train_id" value="1"/>
+            <column name="station_id" value="1"/>
+            <column name="time" value="2023-01-08 14:05:06"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="2"/>
+            <column name="train_id" value="1"/>
+            <column name="station_id" value="3"/>
+            <column name="time" value="2023-01-09 04:30:00"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="3"/>
+            <column name="train_id" value="1"/>
+            <column name="station_id" value="7"/>
+            <column name="time" value="2023-01-10 11:22:30"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="4"/>
+            <column name="train_id" value="2"/>
+            <column name="station_id" value="2"/>
+            <column name="time" value="2023-01-11 13:30:00"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="5"/>
+            <column name="train_id" value="2"/>
+            <column name="station_id" value="4"/>
+            <column name="time" value="2023-01-12 23:40:00"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="6"/>
+            <column name="train_id" value="2"/>
+            <column name="station_id" value="5"/>
+            <column name="time" value="2023-01-13 01:44:50"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="7"/>
+            <column name="train_id" value="2"/>
+            <column name="station_id" value="6"/>
+            <column name="time" value="2023-01-14 9:50:00"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="8"/>
+            <column name="train_id" value="3"/>
+            <column name="station_id" value="7"/>
+            <column name="time" value="2023-01-15 17:50:00"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="9"/>
+            <column name="train_id" value="3"/>
+            <column name="station_id" value="4"/>
+            <column name="time" value="2023-01-16 22:10:00"/>
+        </insert>
+        <insert tableName="schedule">
+            <column name="id" value="10"/>
+            <column name="train_id" value="3"/>
+            <column name="station_id" value="1"/>
+            <column name="time" value="2023-01-17 02:19:00"/>
+        </insert>
+        <insert tableName="schedule">
+        <column name="id" value="11"/>
+        <column name="train_id" value="3"/>
+        <column name="station_id" value="3"/>
+        <column name="time" value="2023-01-18 04:30:00"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="schedule"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
+
+    <changeSet id="v02-4-0" author="Ruslan">
+        <tagDatabase tag="insert_table_stations"/>
+    </changeSet>
+
+    <changeSet id="v02-4-1" author="Ruslan">
+        <insert tableName="stations">
+            <column name="station_id" value="1"/>
+            <column name="name" value="Moscow"/>
+        </insert>
+        <insert tableName="stations">
+            <column name="station_id" value="2"/>
+            <column name="name" value="Kazan"/>
+        </insert>
+        <insert tableName="stations">
+            <column name="station_id" value="3"/>
+            <column name="name" value="Rostov"/>
+        </insert>
+        <insert tableName="stations">
+            <column name="station_id" value="4"/>
+            <column name="name" value="Belgorod"/>
+        </insert>
+        <insert tableName="stations">
+            <column name="station_id" value="5"/>
+            <column name="name" value="Omsk"/>
+        </insert>
+        <insert tableName="stations">
+            <column name="station_id" value="6"/>
+            <column name="name" value="Vologda"/>
+        </insert>
+        <insert tableName="stations">
+            <column name="station_id" value="7"/>
+            <column name="name" value="Voronezh"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="stations"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

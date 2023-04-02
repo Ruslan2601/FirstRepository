@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
+
+    <changeSet id="v02-2-0" author="Ruslan">
+        <tagDatabase tag="insert_table_trains"/>
+    </changeSet>
+
+    <changeSet id="v02-2-1" author="Ruslan">
+        <insert tableName="trains">
+            <column name="train_id" value="1"/>
+            <column name="number" value="150236"/>
+            <column name="place" value="50"/>
+        </insert>
+        <insert tableName="trains">
+            <column name="train_id" value="2"/>
+            <column name="number" value="456258"/>
+            <column name="place" value="50"/>
+        </insert>
+        <insert tableName="trains">
+            <column name="train_id" value="3"/>
+            <column name="number" value="125364"/>
+            <column name="place" value="50"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="trains"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
